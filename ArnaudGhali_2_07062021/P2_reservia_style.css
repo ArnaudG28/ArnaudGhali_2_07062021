@@ -7,17 +7,98 @@ Par Arnaud Ghali
 @font-face
 {
 font-family:'Raleway';
-src: url('polices/Raleway-Bold.ttf') format('truetype');
-src: url('polices/Raleway-Black.ttf') format('truetype');
+src: url('polices/Raleway-VariableFont_wght.ttf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
 
+/* Navigation */
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 15px;
+}
+
 /* Eléments principaux de la page */
+section
+{
+    display: flex;
+}
+#conteneuractivite {
+    display: flex;
+    flex-direction: row;
+    align-content :space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.activite {
+    border: 1px solid black; 
+    background-color: #FFFF;
+    box-shadow: 4px 2px 2px #a19f9f;
+    border-radius: 5px;
+    text-align: left;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    color: #181818;
+    font-weight:900 ;
+    flex: 1 1 auto;
+}
+.activitepetite {
+    border: 1px solid black; 
+    background-color: #FFFF;
+    box-shadow: 4px 2px 2px #a19f9f;
+    border-radius: 5px;
+    text-align: left;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    color: #181818;
+    font-weight:900 ;
+    flex: 1 0 auto;
+}
+.margetab
+{
+    margin-left:20px;
+}
+}
+.photo
+{
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+}
+article
+{
+    margin-right: 20px;
+    flex: 3;
+}
+
+#bloc_page
+{
+    width: 900px;
+    margin: auto;
+}
+
+#titre_principal
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
 
 body
 {
-font-family:'Raleway-Black.ttf';
+font-family:'Raleway', sans-serif;
 color: #181818;
 font-weight: normal;
 }
@@ -30,7 +111,7 @@ margin: auto;
 
 section h1, footer h1, nav a
 {
-font-family: 'Raleway-Bold.ttf';
+font-family: 'Raleway', sans-serif;
 color: #181818;
 font-weight:900 ;
 }
@@ -51,7 +132,7 @@ display: flex;
 }
 
 
-/* Navigation */
+
 
 
 /* Banière */
@@ -115,12 +196,13 @@ padding-top: 25px;
 
 footer p, footer ul
 {
-font-family:'Raleway-Bold.ttf';
+font-family:'Raleway', sans-serif;
 font-size: 0.8em;
 }
 
 footer h1
 {
+font-family:'Raleway', sans-serif;
 font-size: 1.1em;
 }
 
