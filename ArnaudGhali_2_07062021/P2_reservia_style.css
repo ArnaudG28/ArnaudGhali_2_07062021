@@ -4,6 +4,40 @@ P2_reservia_style.css
 Feuille de style pour le projet 2 Reservia OpenClassRooms
 Par Arnaud Ghali
 */ 
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px
+@media screen and (max-width: 1280px){} */
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px 
+@media all and (min-width: 1024px) and (max-width: 1280px){}*/
+
+/* Sur tous types d'écran de type mobile  
+@media handheld {}  attention non géré par certain navigateur
+
+@media (max-width: 1180px) {}
+ 
+@media (max-width: 760px) {}
+*/
+
+/* Sur les téléviseurs 
+@media tv{} /* attention non géré par certain navigateur*/
+
+/* Sur tous types d'écrans orientés verticalement 
+@media all and (orientation: portrait){}*/
+
+/* exemples @media 
+@media (height > 600px) {
+    body { line-height: 1.4; }
+}
+
+@media (400px <= width <= 700px) {
+    body { line-height: 1.4; }
+}*/
+
+
+/* Pour le projet 2 */
+/*@media all and (max-width: 1024px)
+{*/
 @font-face
 {
 font-family:'Raleway';
@@ -12,201 +46,108 @@ font-weight: normal;
 font-style: normal;
 }
 
-/* Navigation */
-nav ul
-{
+body {
+    background-color: #FFFF;
+}
+
+  /*@media screen and (max-width: 575px) {
+    .main-nav { flex-direction: column; }
+    .main-nav ul { margin-bottom: 1em; }
+}*/
+
+.main-nav {
+    display: flex;
+    padding: 1em;
+    border-radius: 5px;
+    background: #1c87c9;
+    color: white;
+    }
+.main-nav > ul {
+    display: flex;
+    flex: 2;
+    padding: 0;
+    margin: 0;
     list-style-type: none;
-    display: flex;
+    align-items : left;
+    }
+.main-nav li { 
+    margin-left: 1em; 
 }
+.main-nav > form {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    }
+.main-nav input { flex: 1; }
+.main-nav button {
+    padding: 0 1em;
+    margin-left: .3em;
+    border: 0;
+    border-radius: 1em;
+    background: white;
+    color: #666666;
+    }
 
-nav li
-{
-    margin-right: 15px;
-}
 
-/* Eléments principaux de la page */
-section
-{
-    display: flex;
-}
-#conteneuractivite {
-    display: flex;
-    flex-direction: row;
-    align-content :space-around;
-    justify-content: center;
+
+/*Body*/
+body{
+    font-family:'Raleway';
+    font-size:18px;
+    line-height:1.5;
+    
+    max-width:1200px;
+    margin:auto;
+  }
+/* Partie resultat*/
+  .flex-resultat{
+    display:flex;
+    flex-wrap:wrap;
+    align-content: space-between;
+  }
+  
+  .flex-itemresultat{
+    box-sizing:border-box;
+    background-color: #F2F2F2;
+    width:30.33%;
+    padding:25px;
+
+  }
+  .flex-itemblanc{
+    box-sizing:border-box;
+    background-color: ##FFFF;
+    width:3%;
+  }
+
+  .flex-itemresultat.w66{
+    background-color: #F2F2F2;
+    width:66.66%;
+  }
+  .flex-detailR{
+    display:flex;
+    flex-wrap:wrap;
     align-items: center;
-}
+    align-content: space-around;
+  }
+  .flex-detailRPhoto{
 
-.activite {
-    border: 1px solid black; 
-    background-color: #FFFF;
-    box-shadow: 4px 2px 2px #a19f9f;
-    border-radius: 5px;
-    text-align: left;
-    border-radius: 5px;
-    font-family: 'Raleway', sans-serif;
-    color: #181818;
-    font-weight:900 ;
-    flex: 1 1 auto;
-}
-.activitepetite {
-    border: 1px solid black; 
-    background-color: #FFFF;
-    box-shadow: 4px 2px 2px #a19f9f;
-    border-radius: 5px;
-    text-align: left;
-    border-radius: 5px;
-    font-family: 'Raleway', sans-serif;
-    color: #181818;
-    font-weight:900 ;
-    flex: 1 0 auto;
-}
-.margetab
-{
-    margin-left:20px;
-}
-}
-.photo
-{
+  }
+  .photopetite{
     border-top-left-radius:5px;
     border-top-right-radius: 5px;
-}
-article
-{
-    margin-right: 20px;
-    flex: 3;
-}
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 150px;
+  }
 
-#bloc_page
-{
-    width: 900px;
-    margin: auto;
-}
+  .flexactivite{
+    display:flex;
+    flex-wrap:wrap;
+  }
 
-#titre_principal
-{
-    display: flex;
-    flex-direction: column;
-}
-
-#logo
-{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-}
-
-body
-{
-font-family:'Raleway', sans-serif;
-color: #181818;
-font-weight: normal;
-}
-
-#bloc_page
-{
-width: 900px;
-margin: auto;
-}
-
-section h1, footer h1, nav a
-{
-font-family: 'Raleway', sans-serif;
-color: #181818;
-font-weight:900 ;
-}
-
-/* Header */
-
-header
-{
-background-color:#FFFF;
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-}
-
-#titre_principal
-{
-display: flex;
-}
+  .flex-itemactivite.w100{
+    width:100%;
+  }
 
 
 
-
-
-/* Banière */
-
-
-/* Corps */
-
-section
-{
-display: flex;
-margin-bottom: 20px;
-}
-
-article, aside
-{
-text-align: justify;
-}
-
-article
-{
-background-color:#F2F2F2;
-margin-right: 20px;
-flex: 3;
-border-radius: 5px;
-padding: 10px;
-}
-
-
-article p
-{
-font-size: 0.8em;
-}
-
-aside
-{
-flex: 1.2;
-position: relative;
-background-color:#F2F2F2;
-border-radius: 5px;
-padding: 10px;
-font-size: 0.9em;
-}
-
-#fleche_bulle
-{
-position: absolute;
-top: 100px;
-left: -12px;
-}
-
-
-/* Footer */
-
-footer
-{
-display: flex;
-background-color: #F2F2F2;
-justify-content: space-around;
-padding-top: 25px;
-}
-
-footer p, footer ul
-{
-font-family:'Raleway', sans-serif;
-font-size: 0.8em;
-}
-
-footer h1
-{
-font-family:'Raleway', sans-serif;
-font-size: 1.1em;
-}
-
-#a_propos
-{
-width: 35%;
-}
