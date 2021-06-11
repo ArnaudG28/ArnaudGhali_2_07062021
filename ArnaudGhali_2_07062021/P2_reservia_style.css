@@ -54,7 +54,11 @@ body {
     .main-nav { flex-direction: column; }
     .main-nav ul { margin-bottom: 1em; }
 }*/
-
+@media only screen and (min-width: 850px) {
+  .band {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 .main-nav {
     display: flex;
     padding: 1em;
@@ -111,14 +115,9 @@ body{
     background-color: #F2F2F2;
     width:30.33%;
     padding:25px;
+    margin-left: 8px;
 
   }
-  .flex-itemblanc{
-    box-sizing:border-box;
-    background-color: ##FFFF;
-    width:3%;
-  }
-
   .flex-itemresultat.w66{
     background-color: #F2F2F2;
     width:66.66%;
@@ -129,15 +128,63 @@ body{
     align-items: center;
     align-content: space-around;
   }
-  .flex-detailRPhoto{
-
+  .detailRPhoto{
+    /*display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    align-content: space-around;*/
   }
-  .photopetite{
-    border-top-left-radius:5px;
-    border-top-right-radius: 5px;
+  /* Vignette */
+  .vignette {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+  .vignetteD {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex : 1 200px;
+    flex-direction: column;
+    line-height: 1em;
+    min-height: 100%;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    height: 150px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    padding:0;
+  }
+  .vignetteD:hover { /*Puis au survol, soulevons la carte légèrement et rendons l’ombre plus prononcée */
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+  .vignetteD .imageHebergement {
+    padding-bottom: 50%;
+    margin: 5px 5px 5px 5px;;
+    background-size:cover;
+    background-position: center center;
+  }
+  .vignetteD p { 
+    line-height: 1em;
+  }
+  .photopetite{
+    height: 100px;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+  }
+
+  .imageHebergement {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   }
 
   .flexactivite{
