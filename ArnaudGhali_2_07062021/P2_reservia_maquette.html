@@ -7,25 +7,66 @@
          <!-- En-tête de la page -->
         <meta charset="utf-8" />
         <title>Hebergement de vacances</title>
+        <meta name="title" content="Reservia - Trouvez votre hébergement pour des vacances de rêve">
+        <meta name="description" content="Reservia, rechercher le meilleur hébergement pour vos vacances">
+         <!-- feuille de style -->
         <link rel="stylesheet" type="text/css" href="P2_reservia_style.css">
+        <!-- bibliotheque icones -->
+        <script src="https://kit.fontawesome.com/fd4f7fa464.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-      <header>
-        <p>essai</p>
-        <nav class="main-nav">
-            <form>
-              <input type="search" placeholder="Search">
-              <button>Go</button>
-            </form>
-            <ul>
-                <li>Accueil</li>
-                <li>A propos</li>
-                <li>Services</li>
-                <li>Contactez-nous</li>
-              </ul>
-          </nav>
-        </header>
-        <h1>La propriété flex</h1>
+
+<!-- Body -->
+<body>
+<!-- Header -->
+    <header class="header">
+        <img class="headerImg" src="./images/logo/Reservia.svg" alt="Reservia">
+        <nav class="headerNav">
+        <a class="headerNavLienB" href="" style="color:#0065FC;">Hébergement</a>
+        <a class="headerNavLien" href="">Activités</a>
+        <a class="headerNavLien" href="" style="color:#0065FC;">S'inscrire</a>
+        </nav>
+    </header>
+<!-- Header -->
+
+<!-- Main -->
+    <!-- Recherche -->
+    <section>
+          <h1 class="rechercheTitre">Trouvez votre hébergement pour des vacances de rêve</h1>
+          <p class="rechercheSoustitre">En plein centre de ville ou en pleine nature</p>
+          <form class="rechercheForm" action="" method="POST">
+                <span class="rechercheIcon"><i class="fas fa-map-marker-alt"></i></span>
+                <input class="rechercheFormInput" type="search" placeholder="Marseille, France" size="1">
+                <button class="rechercheSubmitButton">Rechercher</button>
+          </form>
+          <!-- Filtres -->
+          <div class="rechercheFiltres">
+                <div class="rechercheFiltresTitre">
+                    <h3 class="rechercheFiltresTitreStyle">Filtres</h3>
+                </div>
+                <div class="rechercheFiltresElements">
+                    <div class="rechercheFiltresElementsIcon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="rechercheFiltresElementsTitre">Économique</div>
+                </div>
+                <div class="rechercheFiltresElements">
+                    <div class="rechercheFiltresElementsIcon"><i class="fas fa-child"></i></div>
+                    <div class="rechercheFiltresElementsTitre">Familial</div>
+                </div>
+                <div class="rechercheFiltresElements">
+                    <div class="rechercheFiltresElementsIcon"><i class="fas fa-heart"></i></div>
+                    <div class="rechercheFiltresElementsTitre">Romantique</div>
+                </div>
+                <div class="rechercheFiltresElements">
+                    <div class="rechercheFiltresElementsIcon"><i class="fas fa-dog"></i></div>
+                    <div class="rechercheFiltresElementsTitre">Animaux autorisés</div>
+                </div>
+          </div>
+          <div class="rechercheResultat">
+            <div class="rechercheResultatIcon"><i class="fas fa-info"></i></div>
+            <p class="rechercheResultatText">Plus de 500 logements sont disponibles dans cette ville</p>
+          </div>
+          <!-- Filtres -->
+    </section>
+      <!-- Recherche -->
         <div class="flex-resultat">
             <div  class="flex-itemresultat w66">
             <article>
@@ -36,50 +77,213 @@
                             <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
                                 <a href="" class="vignetteD">
                                 <article>
-                                    <div class="imageHebergement" style="background-image:url('/images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg');"></div>
-                                    <p>Auberge La Cannebière<p>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg');"></div>
+                                    <h1>Auberge La Cannebière</h1>
                                     <p>Nuit à partir de <b>25 €</b></p>
-                                    <p>****</p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
                                 </article>
                                 </a>
                             </div>
                         </article>
-                        <article class="flex-detailRPhoto">
-                            <img src="\images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Vieux port" class="photopetite" />
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg');"></div>
+                                    <h1>Hôtel du port</h1>
+                                    <p>Nuit à partir de <b>52 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
                         </article>
-                        <article class="flex-detailRPhoto">
-                            <img src="\images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Vieux port" class="photopetite" />
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg');"></div>
+                                    <h1>Hôtel les mouettes</h1>
+                                    <p>Nuit à partir de <b>76 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
                         </article>
-                        <article class="flex-detailRPhoto">
-                            <img src="\images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Vieux port" class="photopetite" />
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg');"></div>
+                                    <h1>Hôtel de la mer</h1>
+                                    <p>Nuit à partir de <b>46 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
                         </article>
-                        <article class="flex-detailRPhoto">
-                            <img src="\images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Vieux port" class="photopetite" />
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg');"></div>
+                                    <h1>Auberge Le Panier</h1>
+                                    <p>Nuit à partir de <b>23 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
                         </article>
-                        <article class="flex-detailRPhoto">
-                            <img src="\images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Vieux port" class="photopetite" />
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg');"></div>
+                                    <h1>Hôtel chez Amina</h1>
+                                    <p>Nuit à partir de <b>96 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
                         </article>
                     </div>
                 </div>
                 <p>Afficher plus</p>
             </article>
+            </div>
+            <div class="flex-itemresultat">
+                <article >
+                    <h1>Les plus populaires</h1>
+                    </article>
+                <div class="vignetteL">
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteLD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg');"></div>
+                                    <h1>Hôtel de la mer</h1>
+                                    <p>Nuit à partir de <b>46 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteLD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg');"></div>
+                                    <h1>Hôtel de la mer</h1>
+                                    <p>Nuit à partir de <b>46 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="flex-detailRPhoto"><!-- grid item, containing a card -->
+                                <a href="" class="vignetteLD">
+                                <article>
+                                    <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg');"></div>
+                                    <h1>Hôtel de la mer</h1>
+                                    <p>Nuit à partir de <b>46 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </article>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
         </div>
-            <article class="flex-itemresultat">
-              <h1>Les plus populaires</h1>
-              <p>Times New Roman est une police de caractère avec empattement connue et répandue, faisant partie de la famille des réales. Elle est apparue en 1931 dans le journal londonien The Times (police Times), pour lequel elle a été dessinée par Victor Lardent
-                (en) sous la direction de Stanley Morison (Monotype). Bien qu'elle ne soit plus utilisée par le journal, cette police est toujours très utilisée dans les livres.</p>
-            </article>
+        <!-- Activité --> 
+            <section>
+                <div class="imageHebergement" style="background-image:url('./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg');"></div>
+            </section>
+        <!-- Activité --> 
+        <div class="flexactivite">
+            <div  class="fflex-itemactivite.w100">
+                <article>
+                <img class="imageHebergement" src="images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg"></div>
+                <h1>Hôtel de la mer</h1>
+                <p>Nuit à partir de <b>46 €</b></p>
+                </article>
+            </div>
         </div>
-        <div class="flex-activite">
-            <article class="flex-itemactivite w100">
-              <h1>Activités à Marseille</h1>
-              <p>Garamond est un groupe de polices serif, nommé d’après le graveur Claude Garamont (vers 1480-1561), à l’origine de la famille des « garaldes ». La plupart des polices d’écriture qui portent aujourd’hui le nom de « Garamond » sont dérivées du travail
-                ultérieur du typographe Jean Jannon. Les versions romaines du Sabon, Granjon, et les Garamond de Stempel et Adobe ont une relation directe avec les caractères de Claude Garamont.</p>
-            </article>
-        </div>
- 
-    </body>       
+    </body> 
+<!-- MAIN -->  
+<!-- FOOTER -->    
       <footer>
-      <p>essai</p> 
+        <div class="footerTbxColonne">
+            <div class="footerColonne">
+              <h3 class="footerColonneTitre">A propos</h3>
+              <a href="" class="footerColonneLien">Fonctionnement du site</a>
+              <a href="" class="footerColonneLien">Conditions générales de vente</a>
+              <a href="" class="footerColonneLien">Données et confidentialités</a>
+            </div>
+            <div class="footerColonne">
+              <h3 class="footerColonneTitre">Nos hébergement</h3>
+              <a href="" class="footerColonneLien">Charte qualité</a>
+              <a href="" class="footerColonneLien">Soumettre votre hotel</a>
+            </div>
+            <div class="footerColonne">
+              <h3 class="footerColonneTitre">Assitance</h3>
+              <a href="" class="footerColonneLien">Centre d'aide</a>
+              <a href="" class="footerColonneLien">Nous contacter</a>
+            </div>
+        </div>
       </footer>
+<!-- FOOTER -->
 </html>
