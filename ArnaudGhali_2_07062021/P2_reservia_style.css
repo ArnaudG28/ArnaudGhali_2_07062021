@@ -11,27 +11,25 @@ Par Arnaud Ghali
   }
 }
 
-@font-face
-{
-font-family: "Raleway";
-src: url('polices/Raleway-VariableFont_wght.ttf') format('truetype');
+/* importation des fonts Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Definition des fonts par defaut pour la page */
+@font-face {
+font-family: 'Raleway', sans-serif;
+src: url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')  format('truetype');
 font-weight: normal;
 font-style: normal;
-margin: 0;
 }
 
-
-/*Body*/
+/*Body généralités polices et fond*/
 body{
-  font-family:'Raleway';
-  font-size:18px;
-  line-height:1.5;
-  max-width:1200px;
-  margin:auto;
+  font-family: 'Raleway', sans-serif;
+  margin:0;
   background-color:#FFFF;
 }
 
-a {
+a { /* Pour les balises liens de toute la page*/
   color: inherit;
   text-decoration: none;
 }
@@ -44,7 +42,6 @@ header { /*Definition de la grille*/
   grid-template-columns: auto 1fr auto;
   grid-template-areas: "Logo . navbar";
   max-width: 1440px;
-  margin: auto;
 }
 .headerLogo {
   grid-area: logo;
@@ -99,7 +96,7 @@ header { /*Definition de la grille*/
   width: 14rem;
   font-size: 1rem;
   font-weight: bold;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
 }
 .rechercheSubmitButton {
   background-color: #0065FC;
@@ -109,7 +106,7 @@ header { /*Definition de la grille*/
   border-radius: 0 1rem 1rem 0;
   padding: 0 1.5rem;
   font-size: 1rem;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
   cursor: pointer;
 }
 /* Les filtres*/
@@ -122,7 +119,7 @@ header { /*Definition de la grille*/
 .rechercheFiltresTitre {
   display: flex;
   align-items: center;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
   padding: 1 1rem;
   margin: 0 1rem;
 }
@@ -131,7 +128,7 @@ header { /*Definition de la grille*/
   margin: 0 2rem 1rem 0;
   display: flex;
   align-items: center;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
 }
 
 .rechercheFiltresElements {
@@ -144,7 +141,7 @@ header { /*Definition de la grille*/
   cursor: pointer;
   transition-duration: 0.1s;
   font-weight: bold;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
 }
 
 .rechercheFiltresElementsTitre{
@@ -152,7 +149,7 @@ header { /*Definition de la grille*/
   align-items: center;
   margin-right: 1.5rem;
   font-weight: bold;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
 }
 
 .rechercheFiltresElementsIcon {
@@ -193,176 +190,34 @@ header { /*Definition de la grille*/
 }
 
 /* Partie resultat*/
-  .flex-resultat{
-    display:flex;
-    flex-wrap:wrap;
-    align-content: space-between;
-  }
+.flex-resultat{
+  display:flex;
+  flex-wrap:wrap;
+  align-content: space-between;
+  margin: auto;
+}
 
   /*Hebergement*/
-  .flex-itemresultat.w66{ 
-    background-color: #F2F2F2;
-    width:66.66%;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-
-/*Les plus populaires*/
-  .flex-itemresultat{ 
-    box-sizing:border-box;
-    background-color: #F2F2F2;
-    width:30.33%;
-    padding:25px;
-    margin-left: 8px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-
-/*Activités*/
-  .flexactivite{
-    display:flex;
-    flex-wrap:wrap;
-  }
-  .flex-itemactivite.w100{
-    width:100%;
-  }
-
-  .flex-detailR{ /*Detail photos hebergement*/
-    display:flex;
-    flex-wrap:wrap;
-    align-items: center;
-    align-content: space-around;
-  }
-  .detailRPhoto{
-    /*display:flex;
-    flex-wrap:wrap;
-    align-items: center;
-    align-content: space-around;*/
-  }
-  /* Vignette */
-  .vignette { /* Grid vignette hebergement*/
-    width: 90%;
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-  }
-  .vignetteD {/* chaque vignette hebergement*/
-    background: white;
-    text-decoration: none;
-    color: #444;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex : 1 200px;
-    flex-direction: column;
-    line-height: 1em;
-    min-height: 100%;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    position: relative;
-    top: 0;
-    transition: all .1s ease-in;
-    padding:0;
-  }
-  .vignetteD:hover { /*Puis au survol, soulevons la carte légèrement et rendons l’ombre plus prononcée */
-    top: -2px;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-  }
-  .vignetteD .imageHebergement {
-    padding-bottom: 50%;
-    margin: 5px 5px 5px 5px;;
-    background-size:cover;
-    background-position: center center;
-  }
-  .vignetteD h1 {
-    font-size: 15px;
-    margin: 5px;
-    color: #333;
-  }
-  .vignetteD p { 
-    font-size: 15px;
-    color: #333;
-    margin: 5px;
-  }
-  .photopetite{
-    height: 100px;
-    border-top-left-radius:5px;
-    border-top-right-radius: 5px;
-  }
-
-  .imageHebergement {
-  border-top-right-radius: 5px;
+.flex-hebergement{ 
+  background-color: #F2F2F2;
+  width:66.66%;
+  margin-bottom: 8px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-  }
+  border-top-right-radius: 5px;
+}
 
-  .vignetteL { /* Grid vignette Les plus populaires*/
-    width: 90%;
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-  }
-  .vignetteLD {/* chaque vignette Les plus populaires*/
-    background: white;
-    text-decoration: none;
-    color: #444;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex : 1 200px;
-    flex-direction: column;
-    line-height: 1em;
-    min-height: 100%;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    position: relative;
-    top: 0;
-    transition: all .1s ease-in;
-    padding:0;
-  }
-  .vignetteLD:hover { /*Puis au survol, soulevons la carte légèrement et rendons l’ombre plus prononcée */
-    top: -2px;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-  }
-  .vignetteLD .imageHebergement {
-    padding-bottom: 50%;
-    margin: 5px 5px 5px 5px;;
-    background-size:cover;
-    background-position: center center;
-  }
-  .vignetteL h1 {
-    font-size: 15px;
-    margin: 5px;
-    color: #333;
-  }
-  .vignetteL p { 
-    font-size: 15px;
-    color: #333;
-    margin: 5px;
-  }
-
-/*Activités*/.
-.activite { /* Grid vignette Les plus populaires*/
-  width: 100%;
+.vignette { /* Grid vignette hebergement*/
+  width: 90%;
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
 }
-.activiteVignette {
+.vignetteD {/* chaque vignette hebergement*/
   background: white;
   text-decoration: none;
   color: #444;
@@ -381,13 +236,208 @@ header { /*Definition de la grille*/
   transition: all .1s ease-in;
   padding:0;
 }
-
-.activiteTitre{
-
+.vignetteD:hover { /*Puis au survol, soulevons la carte légèrement et rendons l’ombre plus prononcée */
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+.vignetteD .imageHebergement {
+  padding-bottom: 50%;
+  margin: 5px 5px 5px 5px;
+  background-size:cover;
+  background-position: center center;
+}
+.vignetteD h1 {
+  font-size: 15px;
+  margin: 5px;
+  color: #333;
+}
+.vignetteD p { 
+  font-size: 15px;
+  color: #333;
+  margin: 5px;
+}
+.photopetite{
+  height: 100px;
+  border-top-left-radius:5px;
+  border-top-right-radius: 5px;
 }
 
-.activiteVignetteTitre{
+.imageHebergement {
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+object-fit: cover;/* rempli le contenu dans la dimension*/
+}
 
+.flex-detailR{
+  display:flex;
+  flex-wrap:wrap;
+  align-items: center;
+  align-content: space-around;
+}
+
+
+
+/*Les plus populaires*/
+
+/* Definition du contenair */
+.flex-populaire{ 
+  display: flex;
+  flex-direction: column;
+  box-sizing:border-box;
+  background-color: #F2F2F2;
+  width:30.33%;
+  padding:25px;
+  margin-left: 8px;
+  top :0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #F2F2F2;
+  margin-bottom: 8px;
+}
+
+/* enveloppe et reglès pour Grid */
+.vignettePopulaires{
+width: 90%;
+max-width: 1240px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: auto;
+grid-gap: 20px;
+}
+
+/* chaque vignette populaire*/
+.vignettePopulaire {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px 5px 5px 5px;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  padding:5px;
+  margin : 5px 5px 5px 5px;
+}
+
+.vignettePopulaire:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.vignettePopulaireImages{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}
+.imagePopulaire{
+  width: 9vw;
+  height: 9rem;
+  object-fit: cover;/* rempli le contenu dans la dimension*/
+  align-content: center;
+  border-radius: 5px 0px 0px 5px;
+  }
+
+.vignettePopulaireContent {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-items: start;
+}
+.vignettePopulaireContent h1 {
+  font-size: 15px;
+  color: #333;
+}
+.vignettePopulaireContent p { 
+  font-size: 15px;
+  color: #333;
+}
+
+
+/*Activités*/
+.flex-activite{
+  display:flex;
+  margin-bottom: 8px;
+  width:100%;
+}
+
+/* enveloppe et reglès pour Grid */
+.activite{
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr [col-start]); /* 4 colonnes*/
+  grid-template-rows: repeat(2, 200px [col-start]); /* 2 lignes*/
+  grid-gap: 20px;
+}
+
+.activiteTitre {
+  font-size: 15px;
+  color: #333;
+}
+
+/* chaque vignette activite*/
+.vignetteActivite {
+  box-shadow: 0 0 20px #0000002e;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: all .1s ease-in;
+  border-radius: 5px 5px 5px 5px;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  justify-content: space-between;
+  padding:5px;
+  margin : 5px 5px 5px 5px;
+}
+
+/*Placement des vignettes */
+.vignetteActivite1 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.vignetteActivite2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.vignetteActivite3{
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.vignetteActivite4{
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.vignetteActivite5 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.vignetteActivite6{
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.vignetteActivite:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+.vignetteActiviteImages{
+  position: relative;
+  flex: 1; /*croisse si besoin*/
+}
+.imageActivite{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* rempli le contenu dans la dimension*/
 }
 
 
@@ -396,7 +446,8 @@ header { /*Definition de la grille*/
 footer {
   background-color: #F2F2F2;
   width: 100%;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
+  margin: auto
 }
 .footerTbxColonne {
   display: flex;
@@ -419,7 +470,7 @@ footer {
 }
 
 .footerColonneTitre{
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
 }
 
 
