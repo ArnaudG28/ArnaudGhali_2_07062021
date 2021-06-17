@@ -17,19 +17,24 @@
 <!-- Body -->
 <body>
 <!-- Header -->
-    <header class="header">
-        <img class="headerImg" src="./images/logo/Reservia.svg" alt="Reservia">
-        <nav class="headerNav">
-        <a class="headerNavLienB" href="" style="color:#0065FC;">Hébergement</a>
-        <a class="headerNavLien" href="">Activités</a>
-        <a class="headerNavLien" href="" style="color:#0065FC;">S'inscrire</a>
-        </nav>
+    <header>
+        <div class="flex-navigation">
+            <div class="navigationLogo">
+                <a class="" href=""><img class="headerImg" src="./images/logo/Reservia.svg" alt="Reservia"></a>
+            </div>
+            <nav class="navigationE">
+                <a class="navigationLienB" href="" style="color:#0065FC;">Hébergement</a>
+                <a class="navigationLien" href="">Activités</a>
+                <a class="navigationLien" href="" style="color:#0065FC;">S'inscrire</a>
+            </nav>
+        </div>
     </header>
 <!-- Fin Header -->
 
 <!-- Main -->
     <!-- Recherche -->
-          <h1 class="rechercheTitre">Trouvez votre hébergement pour des vacances de rêve</h1>
+    <div class="flex-recherche">
+          <h2 class="rechercheTitre">Trouvez votre hébergement pour des vacances de rêve</h2>
           <p class="rechercheSoustitre">En plein centre de ville ou en pleine nature</p>
           <form class="rechercheForm" action="" method="POST">
                 <span class="rechercheIcon"><i class="fas fa-map-marker-alt"></i></span>
@@ -39,7 +44,7 @@
           <!-- Filtres -->
           <div class="rechercheFiltres">
                 <div class="rechercheFiltresTitre">
-                    <h2 class="rechercheFiltresTitreStyle">Filtres</h2>
+                    <h3 class="rechercheFiltresTitreStyle">Filtres</h3>
                 </div>
                 <div class="rechercheFiltresElements">
                     <div class="rechercheFiltresElementsIcon"><i class="fas fa-money-bill-wave"></i></div>
@@ -63,16 +68,15 @@
             <p class="rechercheResultatText">Plus de 500 logements sont disponibles dans cette ville</p>
           </div>
           <!--Fin  Filtres -->
-
+        </div>
       <!-- Fin Recherche -->
       <!-- Hebergements -->
-    <section>
-        <div class="flex-resultat">
-            <div  class="flex-hebergement">
-            <article>
-                <h1>Hébergements à Marseille</h1>
-                <div class="flex-detailR">
-                    <div class="vignette">
+    <div class="flex-resultat">
+        <div  class="flex-hebergement">
+                <div class="titreHebergement">
+                    <h3>Hébergements à Marseille</h3>
+                </div>
+                <div class="vignette">
                         <article>
                             <div class=""><!-- grid item, containing a card -->
                                 <a href="" class="vignetteD">
@@ -181,129 +185,137 @@
                                 </a>
                             </div>
                         </article>
+                        <article>
+                            <div class=""><!-- grid item, containing a card -->
+                                <a href="" class="vignetteA">
+                                <article>
+                                    <p><h4>Afficher plus</h4></p>
+                                </article>
+                                </a>
+                            </div>
+                        </article>
                     </div>
-                </div>
-                <p>Afficher plus</p>
-            </article>
-            </div>
+        </div>
             <!-- Fin Hebergements -->
             <!-- Les plus populaires --> 
             <div class="flex-populaire">
-                <article>
-                <h1>Les plus populaires <span><i class="fas fa-chart-line"></i></span></h1>
+                <div class="vignettetitrePopulaire">
+                    <h3 class="titrePopulaire">Les plus populaires</h3>
+                    <div class="logoEcoPopulaire"><i class="fas fa-chart-line"></i></div>
+                </div>
                 <div class="vignettePopulaires">
                             <!-- grid item, containing a card -->
-                            <div class="vignettePopulaire1">
-                                <a href="" class="vignettePopulaire">
-                                    <div class="vignettePopulaireImages">
-                                       <img class="imagePopulaire" src="./images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
-                                    </div>
-                                    <div class="vignettePopulaireContent">
-                                        <h1>Hôtel Le soleil du matin</h1>
-                                        <p>Nuit à partir de <b>128 €</b></p>
-                                        <p>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="vignettePopulaire1">
+                            <a href="" class="vignettePopulaire">
+                                <div class="vignettePopulaireImages">
+                                    <img class="imagePopulaire" src="./images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
+                                </div>
+                                <div class="vignettePopulaireContent">
+                                    <h1>Hôtel Le soleil du matin</h1>
+                                    <p>Nuit à partir de <b>128 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                             <!-- grid item, containing a card -->
-                            <div class="vignettePopulaire2">
-                                <a href="" class="vignettePopulaire">
-                                    <div class="vignettePopulaireImages">
-                                       <img class="imagePopulaire" src="./images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg">
-                                    </div>
-                                    <div class="vignettePopulaireContent">
-                                        <h1>Au cœur de l'eau Chambres d'hôtes</h1>
-                                        <p>Nuit à partir de <b>71 €</b></p>
-                                        <p>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
-                                        </p>
-                                    </div>
-                                </a>
-                            </div> 
+                        <div class="vignettePopulaire2">
+                            <a href="" class="vignettePopulaire">
+                                <div class="vignettePopulaireImages">
+                                    <img class="imagePopulaire" src="./images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg">
+                                </div>
+                                <div class="vignettePopulaireContent">
+                                    <h1>Au cœur de l'eau Chambres d'hôtes</h1>
+                                    <p>Nuit à partir de <b>71 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </div>
+                            </a>
+                        </div> 
                             <!-- grid item, containing a card -->
-                            <div class="vignettePopulaire3">
-                                <a href="" class="vignettePopulaire">
-                                    <div class="vignettePopulaireImages">
-                                       <img class="imagePopulaire" src="./images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg">
-                                    </div>
-                                    <div class="vignettePopulaireContent">
-                                        <h1>Hôtel Tout bleu et Blanc</h1>
-                                        <p>Nuit à partir de <b>68 €</b></p>
-                                        <p>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#0065FC ;"></i>
-                                            <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>    
-                </div>                       
+                        <div class="vignettePopulaire3">
+                            <a href="" class="vignettePopulaire">
+                                <div class="vignettePopulaireImages">
+                                    <img class="imagePopulaire" src="./images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                </div>
+                                <div class="vignettePopulaireContent">
+                                    <h1>Hôtel Tout bleu et Blanc</h1>
+                                    <p>Nuit à partir de <b>68 €</b></p>
+                                    <p>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#0065FC ;"></i>
+                                        <i class="fas fa-star" style="color:#F2F2F2 ;"></i>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>    
+                </div> 
+      
             </div>
-        </section>
         <!-- Fin Les plus populaires --> 
         <!-- Activité -->      
         <div class="flex-activite">  
-        <h3>Activités à Marseille</h3>
-        </div>
         <section >
+            <h3 class="activiteTitre">Activités à Marseille</h3>
             <div class="activite">
                 <a class="vignetteActivite vignetteActivite1" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite"src="./images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Vieux Port</h3>
+                    <h1 class="vignetteActiviteTitre">Vieux Port</h1>
                 </a>
                 <a class="vignetteActivite vignetteActivite2" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite" src="./images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Fort de Pomègues</h3>
+                    <h1 class="vignetteActiviteTitre">Fort de Pomègues</h1>
                 </a>
                 <a class="vignetteActivite vignetteActivite3" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite"src="./images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Parc National des Calanques</h3>
+                    <h1 class="vignetteActiviteTitre">Parc National des Calanques</h1>
                 </a>
                 <a class="vignetteActivite vignetteActivite4" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite" src="./images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Notre-Dame-de-la-Garde</h3>
+                    <h1 class="vignetteActiviteTitre">Notre-Dame-de-la-Garde</h1>
                 </a>
                 <a class="vignetteActivite vignetteActivite5" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite" src="./images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Île du Frioul</h3>
+                    <h1 class="vignetteActiviteTitre">Île du Frioul</h1>
                 </a>
                 <a class="vignetteActivite vignetteActivite6" href="">
                     <div class="vignetteActiviteImages">
                         <img class="imageActivite" src="./images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg">
                     </div>
-                    <h3 class="vignetteActiviteTitre">Parc Longchamp</h3>
+                    <h1 class="vignetteActiviteTitre">Parc Longchamp</h1>
                 </a>
             </div>
-            <p>;&nbsp;</p>
+            <p>&nbsp;</p>
         </section>
+    </div>
         <!-- Fin Activité -->
 </body> 
 <!-- Fin Main -->  
 <!-- Footer -->    
       <footer>
-        <div class="footerTbxColonne">
+        <div class="footer">
             <div class="footerColonne">
               <h3 class="footerColonneTitre">A propos</h3>
               <a href="" class="footerColonneLien">Fonctionnement du site</a>
