@@ -13,7 +13,7 @@ Par Arnaud Ghali
   }
   .activite{
     grid-template-columns: repeat(1, 1fr [col-start]); 
-    grid-template-rows: repeat(1, 200px [col-start]);
+    grid-template-rows: repeat(2, 200px [col-start]);
   }
 }
 
