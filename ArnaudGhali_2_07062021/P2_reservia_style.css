@@ -5,9 +5,15 @@ Feuille de style pour le projet 2 Reservia OpenClassRooms
 Par Arnaud Ghali
 */ 
 
-@media only screen and (min-width: 850px) {
+/*Definition pour les responsives */
+/* Pour les ecrans type portable*/
+@media only screen and (min-width: 500px) {
   .vignette {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .activite{
+    grid-template-columns: repeat(1, 1fr [col-start]); 
+    grid-template-rows: repeat(1, 200px [col-start]);
   }
 }
 
@@ -15,18 +21,19 @@ Par Arnaud Ghali
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Definition des fonts par defaut pour la page */
-@font-face {
-font-family: 'Raleway', sans-serif;
-src: url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')  format('truetype');
-font-weight: normal;
-font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
 
 /*Body généralités polices et fond*/
 body{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway',sans-serif;
   margin:0;
-  background-color:#FFFF;
+  background-color:white;
+}
+
+header{
+  font-family: 'Raleway',sans-serif;
+  margin:0;
+  background-color:white;
 }
 
 a { /* Pour les balises liens de toute la page*/
@@ -34,16 +41,23 @@ a { /* Pour les balises liens de toute la page*/
   text-decoration: none;
 }
 
+.policeVignette{
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  color: #333;
+  margin: 5px;
+}
+
 
 /*Header*/
 
 /* Navigation */
 .flex-navigation {
-  display:flex;
+  display : flex;
   flex-wrap:wrap;
   align-content: space-between;
   margin: auto;
-  background-color:#FFFF;
+  background-color:white;
   margin-bottom: 8px;
   margin-left: 1%;
   margin-right: 1%;
@@ -52,13 +66,13 @@ a { /* Pour les balises liens de toute la page*/
 .navigationLogo {
   width: 30%;
   text-align: left;
-  padding-top: 1rem;
+  padding-top: 16px;
 }
 
 .navigationE {
   width: 70%;
   text-align: right;
-  padding: 2rem;
+  padding: 32px;
   font-weight: 500;
   border-top: 3px transparent solid;
   border-bottom: 3px transparent solid;
@@ -68,12 +82,12 @@ a { /* Pour les balises liens de toute la page*/
 .navigationLien {
   border-top: 3px transparent solid;
   border-bottom: 3px transparent solid;
-  padding: 1rem;
+  padding: 16px;
 }
 .navigationLienB{
   border-top: 3px solid #0065FC;
   border-bottom: 3px transparent solid;
-  padding: 1rem;
+  padding: 16px;
 }
 
 /* Recherche*/
@@ -82,7 +96,7 @@ a { /* Pour les balises liens de toute la page*/
   flex-wrap:wrap;
   flex-direction: column;
   margin: auto;
-  background-color:#FFFF;
+  background-color:white;
   margin-bottom: 8px;
   margin-left: 1%;
   margin-right: 1%;
@@ -90,7 +104,7 @@ a { /* Pour les balises liens de toute la page*/
 
 .rechercheTitre {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 .rechercheSoustitre{
   margin-top: 0;
@@ -102,8 +116,8 @@ a { /* Pour les balises liens de toute la page*/
 }
 .rechercheIcon {
   background-color: #F2F2F2;
-  padding: 1rem;
-  border-radius: 1rem 0 0 1rem;
+  padding: 16px;
+  border-radius: 16px 0 0 16px;
 }
 
 .rechercheFormInput {
@@ -113,8 +127,8 @@ a { /* Pour les balises liens de toute la page*/
   border-bottom: #F2F2F2 1px solid;
   padding: 5px;
   box-sizing: border-box;
-  width: 14rem;
-  font-size: 1rem;
+  width: 224px;
+  font-size: 16px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
 }
@@ -123,16 +137,16 @@ a { /* Pour les balises liens de toute la page*/
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 0 1rem 1rem 0;
-  padding: 0 1.5rem;
-  font-size: 1rem;
+  border-radius: 0 16px 16px 0;
+  padding: 0 24px;
+  font-size: 16px;
   font-family: 'Raleway', sans-serif;
   cursor: pointer;
 }
 /* Les filtres*/
 .rechercheFiltres { /* définition des éléments filtres flex*/
   display: flex;
-  margin-top: 2rem;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
@@ -143,7 +157,7 @@ a { /* Pour les balises liens de toute la page*/
 }
 
 .rechercheFiltresTitreStyle{
-  margin: 0 2rem 1rem 0;
+  margin: 0 32px 16px 0;
   display: flex;
   align-items: center;
   font-family: 'Raleway', sans-serif;
@@ -152,20 +166,33 @@ a { /* Pour les balises liens de toute la page*/
 .rechercheFiltresElements {
   display: flex;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 32px;
   border: 2px solid #d9d9d9;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
+  border-radius: 32px;
+  margin-bottom: 16px;
   cursor: pointer;
   transition-duration: 0.1s;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
 }
 
+.rechercheFiltresElementsIcon :hover{ /*Lors du survol */
+  top: -2px;
+  color:black;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.rechercheFiltresElements :hover {
+  top: -2px;
+  color:black;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  background-color: #F2F2F2;
+}
+
 .rechercheFiltresElementsTitre{
   display: flex;
   align-items: center;
-  margin-right: 1.5rem;
+  margin-right: 24px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
 }
@@ -173,10 +200,10 @@ a { /* Pour les balises liens de toute la page*/
 .rechercheFiltresElementsIcon {
   background-color: #DEEBFF;
   border-radius: 100%;
-  height: 3rem;
-  width: 3rem;
-  min-height: 3.5rem;
-  min-width: 3.5rem;
+  height: 48px;
+  width: 48px;
+  min-height: 56px;
+  min-width: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,20 +214,20 @@ a { /* Pour les balises liens de toute la page*/
 .rechercheResultat {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .rechercheResultatIcon {
-  height: 2rem;
-  width: 2rem;
-  min-height: 2rem;
-  min-width: 2rem;
+  height: 32px;
+  width: 32px;
+  min-height: 32px;
+  min-width: 32px;
   border: solid 1px #d9d9d9;
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  margin-right: 16px;
   color: #0065FC;
 }
 
@@ -217,7 +244,7 @@ a { /* Pour les balises liens de toute la page*/
   align-content: center;
   margin: auto;
   align-content: space-between;
-  background-color: #FFFF;
+  background-color:white;
 }
 
   /*Hebergement*/
@@ -263,7 +290,7 @@ a { /* Pour les balises liens de toute la page*/
   display: flex;
   flex : 1 200px;
   flex-direction: column;
-  line-height: 1em;
+  line-height: 16px;
   min-height: 100%;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -284,16 +311,19 @@ a { /* Pour les balises liens de toute la page*/
   background-size:cover;
   background-position: center center;
 }
-.vignetteD h1 {
+
+.vignetteD h2 {
   font-size: 15px;
   margin: 5px;
   color: #333;
 }
+
 .vignetteD p { 
   font-size: 15px;
   color: #333;
-  margin: 5px;
+  margin-top: 0;
 }
+
 .photopetite{
   height: 100px;
   border-top-left-radius:5px;
@@ -312,7 +342,7 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
   display: flex;
   flex : 1 200px;
   flex-direction: column;
-  line-height: 1em;
+  line-height: 16px;
   min-height: 100%;
   position: relative;
   top: 0;
@@ -355,7 +385,7 @@ align-content: start;
 
 /* chaque vignette populaire*/
 .vignettePopulaire {
-  background:#FFFF;
+  background:white;
   text-decoration: none;
   color: #444;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -384,8 +414,8 @@ align-content: start;
   margin-bottom: 5px;
 }
 .imagePopulaire{
-  width: 9vw;
-  height: 9rem;
+  width: 144px;
+  height: 144px;
   object-fit: cover;/* rempli le contenu dans la dimension*/
   align-content: center;
   border-radius: 5px 0px 0px 5px;
@@ -400,14 +430,14 @@ align-content: start;
   margin-right: 5px;
   margin-bottom: 5px;
 }
-.vignettePopulaireContent h1 {
+.vignettePopulaireContent h4 {
   font-size: 15px;
   color: #333;
 }
 .vignettePopulaireContent p { 
   font-size: 15px;
   color: #333;
-  margin :5px;
+  margin-top: 0;
 }
 
 .vignettetitrePopulaire{
@@ -439,7 +469,7 @@ align-content: start;
   margin-bottom: 8px;
   top : 0;
   width:100%;
-  background-color: #FFFF;
+  background-color:white;
   margin-left: 1%;
   margin-right: 1%;
 }
@@ -461,8 +491,8 @@ align-content: start;
 
 /* chaque vignette activite*/
 .vignetteActivite {
-  box-shadow: 0 0 20px #0000002e;
-  border-radius: 1rem;
+  box-shadow: 0 0 20px  rgba(0,0,0,0.1);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   transition: all .1s ease-in;
@@ -532,7 +562,7 @@ align-content: start;
 }
 
 .vignetteActiviteTitre {
-  padding-left: 1rem;
+  padding-left: 16px;
 }
 
 /*Footer*/
@@ -547,16 +577,16 @@ footer {
   display: flex;
   max-width: 100%;
   margin: auto;
-  padding: 0 2rem;
+  padding: 0 32px;
   box-sizing: border-box;
 }
 .footerColonne {
   width: 33%;
-  padding: 2rem 2rem;
+  padding: 32px 32px;
 }
 .footerColonneLien {
   display: block;
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 .footerColonneLien:hover {
   text-decoration: underline;
