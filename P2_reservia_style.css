@@ -1,0 +1,601 @@
+/*
+P2_reservia_style.css
+---------
+Feuille de style pour le projet 2 Reservia OpenClassRooms
+Par Arnaud Ghali
+*/ 
+
+/*Definition pour les responsives */
+/* Pour les ecrans type portable*/
+@media only screen and (min-width: 500px) {
+  .vignette {
+    grid-template-columns: 1fr;
+  }
+  .activite{
+    grid-template-columns: repeat(1, 1fr [col-start]); 
+    grid-template-rows: repeat(2, 200px [col-start]);
+  }
+}
+
+/* importation des fonts Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Definition des fonts par defaut pour la page */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+
+/*Body généralités polices et fond*/
+body{
+  font-family: 'Raleway',sans-serif;
+  margin:0;
+  background-color:white;
+}
+
+header{
+  font-family: 'Raleway',sans-serif;
+  margin:0;
+  background-color:white;
+}
+
+a { /* Pour les balises liens de toute la page*/
+  color: inherit;
+  text-decoration: none;
+}
+
+.policeVignette{
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  color: #333;
+  margin: 5px;
+}
+
+
+/*Header*/
+
+/* Navigation */
+.flex-navigation {
+  display : flex;
+  flex-wrap:wrap;
+  align-content: space-between;
+  margin: auto;
+  background-color:white;
+  margin-bottom: 8px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.navigationLogo {
+  width: 30%;
+  text-align: left;
+  padding-top: 16px;
+}
+
+.navigationE {
+  width: 70%;
+  text-align: right;
+  padding: 32px;
+  font-weight: 500;
+  border-top: 3px transparent solid;
+  border-bottom: 3px transparent solid;
+  flex: 1;
+}
+
+.navigationLien {
+  border-top: 3px transparent solid;
+  border-bottom: 3px transparent solid;
+  padding: 16px;
+}
+.navigationLienB{
+  border-top: 3px solid #0065FC;
+  border-bottom: 3px transparent solid;
+  padding: 16px;
+}
+
+/* Recherche*/
+.flex-recherche{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  margin: auto;
+  background-color:white;
+  margin-bottom: 8px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.rechercheTitre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.rechercheSoustitre{
+  margin-top: 0;
+}
+.rechercheForm {
+  display: inline-flex;
+  max-width: 100%;
+  overflow: auto;
+}
+.rechercheIcon {
+  background-color: #F2F2F2;
+  padding: 16px;
+  border-radius: 16px 0 0 16px;
+}
+
+.rechercheFormInput {
+  border-right: none;
+  border-left: none;
+  border-top: #F2F2F2 1px solid;
+  border-bottom: #F2F2F2 1px solid;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 224px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+.rechercheSubmitButton {
+  background-color: #0065FC;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 16px 16px 0;
+  padding: 0 24px;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+}
+/* Les filtres*/
+.rechercheFiltres { /* définition des éléments filtres flex*/
+  display: flex;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.rechercheFiltresTitre {
+  display: flex;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.rechercheFiltresTitreStyle{
+  margin: 0 32px 16px 0;
+  display: flex;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.rechercheFiltresElements {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+  border: 2px solid #d9d9d9;
+  border-radius: 32px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+.rechercheFiltresElementsIcon :hover{ /*Lors du survol */
+  top: -2px;
+  color:black;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.rechercheFiltresElements :hover {
+  top: -2px;
+  color:black;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  background-color: #F2F2F2;
+}
+
+.rechercheFiltresElementsTitre{
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+.rechercheFiltresElementsIcon {
+  background-color: #DEEBFF;
+  border-radius: 100%;
+  height: 48px;
+  width: 48px;
+  min-height: 56px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -2px;
+  color:#0065FC;
+}
+
+.rechercheResultat {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.rechercheResultatIcon {
+  height: 32px;
+  width: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  border: solid 1px #d9d9d9;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: #0065FC;
+}
+
+.rechercheResultatText {
+  margin: 0;
+  color:darkgray;
+}
+
+/* Partie resultat*/
+.flex-resultat{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-content: center;
+  margin: auto;
+  align-content: space-between;
+  background-color:white;
+}
+
+  /*Hebergement*/
+.flex-hebergement{ 
+  display:flex;
+  background-color: #F2F2F2;
+  flex-direction: column;
+  width: 66%;
+  top : 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  flex-wrap:wrap;
+  align-items: start;
+  align-content: center;
+  margin-left: 1%;
+}
+
+.titreHebergement{
+  display : flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.vignette { /* Grid vignette hebergement*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  background-color: #F2F2F2;
+  width: 90%;
+  align-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.vignetteD {/* chaque vignette hebergement*/
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex : 1 200px;
+  flex-direction: column;
+  line-height: 16px;
+  min-height: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  padding:0;
+}
+.vignetteD:hover { /*Puis au survol, soulevons la carte légèrement et rendons l’ombre plus prononcée */
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+.vignetteD .imageHebergement {
+  padding-bottom: 50%;
+  margin: 5px 5px 5px 5px;
+  background-size:cover;
+  background-position: center center;
+}
+
+.vignetteD h2 {
+  font-size: 15px;
+  margin: 5px;
+  color: #333;
+}
+
+.vignetteD p { 
+  font-size: 15px;
+  color: #333;
+  margin-top: 0;
+}
+
+.photopetite{
+  height: 100px;
+  border-top-left-radius:5px;
+  border-top-right-radius: 5px;
+}
+
+.imageHebergement {
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+object-fit: cover;/* rempli le contenu dans la dimension*/
+}
+
+.vignetteA {/*  vignette afficher plus*/
+  text-decoration: none;
+  color: #444;
+  display: flex;
+  flex : 1 200px;
+  flex-direction: column;
+  line-height: 16px;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  padding:0;
+}
+
+
+/*Les plus populaires*/
+
+/* Definition du contenair */
+.flex-populaire{ 
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+  width: 30%;
+  top :0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  flex-wrap:wrap;
+  align-items: center;
+  align-content: center;
+  margin-left: 2%;
+  margin-right: 1%;
+}
+
+/* enveloppe et reglès pour Grid */
+.vignettePopulaires{
+width: 90%;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(3, 1fr);
+grid-gap: 20px;
+align-items: center;
+max-width: 1240px;
+align-content: start;
+}
+
+/* chaque vignette populaire*/
+.vignettePopulaire {
+  background:white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px 5px 5px 5px;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+}
+
+.vignettePopulaire:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.vignettePopulaireImages{
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  width: 40%;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.imagePopulaire{
+  width: 144px;
+  height: 144px;
+  object-fit: cover;/* rempli le contenu dans la dimension*/
+  align-content: center;
+  border-radius: 5px 0px 0px 5px;
+  }
+
+.vignettePopulaireContent {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  width: 60%;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.vignettePopulaireContent h4 {
+  font-size: 15px;
+  color: #333;
+}
+.vignettePopulaireContent p { 
+  font-size: 15px;
+  color: #333;
+  margin-top: 0;
+}
+
+.vignettetitrePopulaire{
+  text-decoration: none;
+  width: 96%;
+  color: #444;
+  display: flex;
+  flex-direction: row;
+}
+.titrePopulaire{
+  text-decoration: none;
+  text-align: left;
+  width: 70%;
+  color: #444;
+}
+.logoEcoPopulaire{
+  width: 30%;
+  color: #444;
+  margin-top: 0;
+  display : flex;
+  align-items:center;
+  justify-content: center;
+}
+
+/*Activités*/
+.flex-activite{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  top : 0;
+  width:100%;
+  background-color:white;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* enveloppe et reglès pour Grid */
+.activite{
+  width: 90%;
+  max-width: 1240px;
+  align-content: space-between;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr [col-start]); /* 4 colonnes*/
+  grid-template-rows: repeat(2, 200px [col-start]); /* lignes*/
+  grid-gap: 20px;
+}
+
+.activiteTitre {
+}
+
+/* chaque vignette activite*/
+.vignetteActivite {
+  box-shadow: 0 0 20px  rgba(0,0,0,0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all .1s ease-in;
+  border-radius: 5px 5px 5px 5px;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  justify-content: space-between;
+  padding:5px;
+  margin : 5px 5px 5px 5px;
+}
+
+/*Placement des vignettes */
+/* row start, column start, row end, column end */
+.vignetteActivite1 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.vignetteActivite2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.vignetteActivite3{
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.vignetteActivite4{
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.vignetteActivite5 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.vignetteActivite6{
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.vignetteActivite:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+.vignetteActiviteImages{
+  position: relative;
+  flex: 1; /*croisse si besoin*/
+}
+.imageActivite{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* rempli le contenu dans la dimension*/
+}
+
+.vignetteActivite h1 {
+  font-size: 15px;
+  color: #333;
+}
+.vignetteActivite p { 
+  font-size: 15px;
+  color: #333;
+}
+
+.imageActivite{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  object-fit: cover;/* rempli le contenu dans la dimension*/
+}
+
+.vignetteActiviteTitre {
+  padding-left: 16px;
+}
+
+/*Footer*/
+
+footer {
+  background-color: #F2F2F2;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  margin: auto
+}
+.footer{
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+.footerColonne {
+  width: 33%;
+  padding: 32px 32px;
+}
+.footerColonneLien {
+  display: block;
+  margin: 16px 0;
+}
+.footerColonneLien:hover {
+  text-decoration: underline;
+}
+
+.footerColonneTitre{
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
+
