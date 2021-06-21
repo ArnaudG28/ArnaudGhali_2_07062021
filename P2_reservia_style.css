@@ -5,6 +5,29 @@ Feuille de style pour le projet 2 Reservia OpenClassRooms
 Par Arnaud Ghali
 */ 
 
+/*Definition pour les responsives */
+/* Pour les ecrans type portable*/
+@media only screen and (max-device-width:601px) {
+  .flex-resultat{
+    flex-direction: column;
+  }
+  .vignette {
+    grid-template-columns: 1fr;
+  }
+  .vignettePopulaire {
+    flex-direction: column;
+  }
+  .activite{
+    grid-template-columns: repeat(1, 1fr [col-start]); 
+    grid-template-rows: repeat(2, 200px [col-start]);
+  }
+
+}
+
+@media only screen and (max-device-width:980px) {
+
+ }
+
 /* importation des fonts Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -155,7 +178,7 @@ a { /* Pour les balises liens de toute la page*/
   display: flex;
   align-items: center;
   margin-right: 32px;
-  border: 2px solid  #d9d9d9;
+  border: 2px solid #d9d9d9;
   border-radius: 32px;
   margin-bottom: 16px;
   cursor: pointer;
@@ -172,13 +195,9 @@ a { /* Pour les balises liens de toute la page*/
 
 .rechercheFiltresElements :hover {
   top: -2px;
+  color:black;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
   background-color: #F2F2F2;
-  border: 2px solid  #0065FC;
-}
-
-.rechercheFiltresElementsTitre :hover{
-  border-color:#0065FC;
 }
 
 .rechercheFiltresElementsTitre{
@@ -375,6 +394,7 @@ max-width: 1240px;
 align-content: start;
 }
 
+
 /* chaque vignette populaire*/
 .vignettePopulaire {
   background:white;
@@ -389,6 +409,8 @@ align-content: start;
   position: relative;
   top: 0;
   transition: all .1s ease-in;
+  overflow: hidden;
+  padding:5px;
 }
 
 .vignettePopulaire:hover {
@@ -396,32 +418,39 @@ align-content: start;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
 
+.vignettePopulaire .vignettePopulaireImages .imagePopulaire .vignettePopulaireContent {
+  padding-bottom: 30%;
+  margin: 5px 5px 5px 5px;
+  background-size:cover;
+  background-position: center center;
+}
 .vignettePopulaireImages{
-  display: flex;
-  flex-direction: column;
-  align-content: start;
   width: 40%;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  height: 100%;
+  object-fit: cover;
+  align-content: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .imagePopulaire{
-  width: 144px;
-  height: 144px;
-  object-fit: cover;/* rempli le contenu dans la dimension*/
   align-content: center;
   border-radius: 5px 0px 0px 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 0;
+  margin-bottom: 0;
   }
 
 .vignettePopulaireContent {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  align-items:flex-start;
-  width: 60%;
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  justify-content: space-between;
+  width: 20%;
+  padding:10px;
 }
+
 .vignettePopulaireContent h4 {
   font-size: 15px;
   color: #333;
@@ -430,6 +459,7 @@ align-content: start;
   font-size: 15px;
   color: #333;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .vignettetitrePopulaire{
@@ -591,70 +621,3 @@ footer {
 
 
 
-/*Definition pour les responsives */
-
-/*Pour tous les appareils équipés d'écrans et dont la taille est inférieure à 780px - mobiles*/
-@media screen and (max-width: 780px){
-
-  /* Hebergement*/
-  .vignette {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
-
-  /* Populaire */
-    /* chaque vignette populaire*/
-    .vignettePopulaire {
-      background:white;
-      text-decoration: none;
-      color: #444;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-radius: 5px 5px 5px 5px;
-      min-height: 100%;
-      position: relative;
-      top: 0;
-      transition: all .1s ease-in;
-    }
-
-  /* Activite*/
-  .activite{
-    grid-template-columns: repeat(1, 1fr [col-start]); /* 1 colonne*/
-    grid-template-rows: repeat(2, 200px [col-start]); /* lignes*/
-    grid-gap: 20px;
-  }
-
-  /* Footer*/
-  .footer {
-    flex-direction: column;
-    padding: 0 32px;
-  }
-  .footerColonne {
-    width: 100%;
-    padding: 0;
-  }
-
-  .footerColonneLien {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .footerColonneTitre {
-    margin: 0;
-  }
-
-}
-
-/*Pour tous les appareils équipés d'écrans et dont la taille est inférieure à 991px - tablettes */
-@media only screen and (max-width: 991px){
-  .vignette {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  .activite{
-    grid-template-columns: repeat(2, 1fr [col-start]); 
-    grid-template-rows: auto 192px  192px  192px;
-  }
-
-}
