@@ -20,7 +20,7 @@ Contraintes techniques :
 
 - pas d'utilisation de framework ou pré-compilateur CSS,
 - code from scratch, ulisation de flexbox ou grid fortement recommandé,aucune erreur ni alerte au validateur W3C HTML et CSS,
-- utilisation les balises sémantiques et ne doit contenir,
+- utilisation les balises sémantiques,
 - site compatible avec les dernières versions de Chrome et Firefox,
 
 Livrables :
