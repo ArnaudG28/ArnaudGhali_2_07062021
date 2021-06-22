@@ -5,28 +5,6 @@ Feuille de style pour le projet 2 Reservia OpenClassRooms
 Par Arnaud Ghali
 */ 
 
-/*Definition pour les responsives */
-/* Pour les ecrans type portable*/
-@media only screen and (max-device-width:601px) {
-  .flex-resultat{
-    flex-direction: column;
-  }
-  .vignette {
-    grid-template-columns: 1fr;
-  }
-  .vignettePopulaire {
-    flex-direction: column;
-  }
-  .activite{
-    grid-template-columns: repeat(1, 1fr [col-start]); 
-    grid-template-rows: repeat(2, 200px [col-start]);
-  }
-
-}
-
-@media only screen and (max-device-width:980px) {
-
- }
 
 /* importation des fonts Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -299,7 +277,7 @@ a { /* Pour les balises liens de toute la page*/
   color: #444;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
-  flex : 1 200px;
+  flex : 1;
   flex-direction: column;
   line-height: 16px;
   min-height: 100%;
@@ -384,14 +362,18 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
 
 /* enveloppe et reglès pour Grid */
 .vignettePopulaires{
-width: 90%;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(3, 1fr);
-grid-gap: 20px;
-align-items: center;
-max-width: 1240px;
-align-content: start;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1f;
+  grid-template-rows:auto;
+  grid-gap: 20px;
+  background-color: #F2F2F2;
+  align-items: center;
+  max-width: 1240px;
+  align-content: space-between;
+  margin: 0 auto;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 
@@ -401,16 +383,19 @@ align-content: start;
   text-decoration: none;
   color: #444;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 16px;
   display: flex;
+  flex: 1;
+  min-height: 100%;
   flex-direction: row;
   justify-content: space-between;
   border-radius: 5px 5px 5px 5px;
-  min-height: 100%;
   position: relative;
   top: 0;
   transition: all .1s ease-in;
   overflow: hidden;
   padding:5px;
+  margin : 5px 5px 5px 5px;
 }
 
 .vignettePopulaire:hover {
@@ -418,48 +403,18 @@ align-content: start;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
 
-.vignettePopulaire .vignettePopulaireImages .imagePopulaire .vignettePopulaireContent {
-  padding-bottom: 30%;
-  padding: 5px 5px 5px 5px;
-  background-size:cover;
-  background-position: center center;
-}
-.vignettePopulaireImages{
+.vignettePopulaire img{
   width: 40%;
   height: 100%;
-  object-fit: cover;
-  align-content: center;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-}
-.imagePopulaire{
-  align-content: center;
-  border-radius: 5px 0px 0px 5px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-top: 0;
-  margin-bottom: 0;
+  object-fit: cover; /* rempli le contenu dans la dimension*/
+  border-radius: 5px 0 0 5px;
   }
 
 .vignettePopulaireContent {
-  display: flex;
+  display : flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
-  width: 20%;
-  padding:5px;
-}
-
-.vignettePopulaireContent h4 {
-  font-size: 15px;
-  color: #333;
-}
-.vignettePopulaireContent p { 
-  font-size: 15px;
-  color: #333;
-  margin-top: 0;
-  margin-bottom: 0;
+  padding: 10px;
 }
 
 .vignettetitrePopulaire{
@@ -513,7 +468,7 @@ align-content: start;
 
 /* chaque vignette activite*/
 .vignetteActivite {
-  box-shadow: 0 0 20px  rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -557,6 +512,7 @@ align-content: start;
   top: -2px;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
+
 .vignetteActiviteImages{
   position: relative;
   flex: 1; /*croisse si besoin*/
@@ -620,4 +576,108 @@ footer {
 
 
 
+/*Definition pour les responsives */
+/* Pour les ecrans type portable*/
+@media only screen and (max-device-width:768px) {
+  .flex-resultat{
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  /* Changement de l'ordre des lements flex de resultat Populaire en premier */
+  #Populaire{
+    order: -1;
+  }
+
+  /* Populaire*/
+  .flex-populaire{ 
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .vignettePopulaires{
+    width: 100%;
+  }
+
+  .vignettePopulaire {
+    flex-direction: column;
+  }
+
+  .vignettePopulaire img{
+    width: 100%;
+  }
+
+  .vignettePopulaireContent {
+  display: flex;
+  flex: 1;
+  width :100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hebergement */
+  .flex-hebergement{ 
+    width:100%;
+    margin-left: 0;
+    background-color:white;
+  }
+
+  .vignette {
+    grid-template-columns: 1fr;
+    background-color:white;
+    align-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Activite*/
+  .activite{
+    grid-template-columns: repeat(1, 1fr [col-start]);
+    grid-template-rows: repeat(6, 200px [col-start]); 
+  }
+  .vignetteActivite1 {
+    grid-area: 1 / 1;
+  }
+  
+  .vignetteActivite2 {
+    grid-area: 2 / 1;
+  }
+  
+  .vignetteActivite3{
+    grid-area: 3 /1;
+  }
+  
+  .vignetteActivite4{
+    grid-area: 4 /1;
+  }
+  
+  .vignetteActivite5 {
+    grid-area: 5 / 1;
+  }
+  
+  .vignetteActivite6{
+    grid-area: 6 / 1;
+  }
+
+  /* Footer */
+  .footer{
+    flex-direction: column;
+  }
+
+  .footerColonne {
+    padding :0;
+    width :100%;
+  }
+}
+/* Pour les ecrans type tablette */
+@media (min-width: 769px) and (max-device-width:991px) {
+
+ }
+
+
+ /* Pour les ecrans type desktop */
+ @media only screen and (min-width: 992px) {
+
+ }
 
