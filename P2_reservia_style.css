@@ -3,7 +3,7 @@ P2_reservia_style.css
 ---------
 Feuille de style pour le projet 2 Reservia OpenClassRooms
 Par Arnaud Ghali
-Version finale V20*/ 
+Version finale V21 - correction suite à soutenance : modification @media pour adapation au redimensionnment de la fenêtre, amelioration de la partie populaire, et de la navigation en mobile*/ 
 
 
 /* importation des fonts Raleway */
@@ -30,6 +30,23 @@ a { /* Pour les balises liens de toute la page*/
   text-decoration: none;
 }
 
+/* Définition des tailles de polices */
+
+/* H1 pour le titre principal */
+.policeH1{
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+/* H2 pour les titres des containers */
+.policeH2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+/* H3 pour les vignettes */
 .policeVignette{
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
@@ -93,6 +110,7 @@ a { /* Pour les balises liens de toute la page*/
   border-bottom: 3px transparent solid;
   padding-top: 16px;
   width: max-content;
+  font-weight: bold;
 }
 
 /* Recherche*/
@@ -111,6 +129,7 @@ a { /* Pour les balises liens de toute la page*/
   margin-top: 0;
   margin-bottom: 16px;
 }
+
 .rechercheSoustitre{
   margin-top: 0;
 }
@@ -166,6 +185,9 @@ a { /* Pour les balises liens de toute la page*/
   display: flex;
   align-items: center;
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
 }
 
 .rechercheFiltresElements {
@@ -363,7 +385,6 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
   flex-direction: column;
   background-color: #F2F2F2;
   width: 30%;
-  top :0;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -377,7 +398,7 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
 
 /* enveloppe et reglès pour Grid */
 .vignettePopulaires{
-  width: 90%;
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows:auto;
@@ -418,18 +439,22 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
 
-.vignettePopulaire img{
+.imagePopulaire {
   width: 40%;
-  height: 100%;
-  object-fit: cover; /* rempli le contenu dans la dimension*/
   border-radius: 5px 0 0 5px;
-  }
+  object-fit: contain;
+}
 
 .vignettePopulaireContent {
   display : flex;
   flex: 1;
   flex-direction: column;
   padding: 10px;
+}
+
+.vignettePopulaire .imagePopulaire {
+  background-size:cover;
+  background-position: center center;
 }
 
 .vignettetitrePopulaire{
@@ -442,6 +467,7 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
 .titrePopulaire{
   text-decoration: none;
   text-align: left;
+  margin-top: 5px;
   width: 70%;
   color: #444;
 }
@@ -538,10 +564,10 @@ object-fit: cover;/* rempli le contenu dans la dimension*/
   object-fit: cover; /* rempli le contenu dans la dimension*/
 }
 
-.vignetteActivite h1 {
+/*.vignetteActivite h1 {
   font-size: 15px;
   color: #333;
-}
+}*/
 .vignetteActivite p { 
   font-size: 15px;
   color: #333;
@@ -584,15 +610,15 @@ footer {
   text-decoration: underline;
 }
 
-.footerColonneTitre{
+/*.footerColonneTitre{
   font-family: 'Raleway', sans-serif;
-}
+}*/
 
 
 
 /*Definition pour les responsives */
 /* Pour les ecrans type portable*/
-@media only screen and (max-device-width:768px) {
+@media only screen and (max-width:768px) {
  /* Navigation */
 
 .rechercheResultat{
@@ -607,40 +633,53 @@ padding:0;
 }
 
 .navigation {
-  grid-template-columns: 40% 40%;/* 2 colonnes*/
-  grid-template-rows: 40% 40%; /* lignes*/
+  grid-template-columns: 50% 50%;/* 2 colonnes*/
+  grid-template-rows: 45% 45%; /* lignes*/
   align-items: center;
-  justify-items: end;
-  grid-gap: 5px;
+  grid-gap: 0px;
   align-content: center;
 }
 
 /* Changement d'orde */
-.navigation :nth-child(1) { order: 1; }
-.navigation :nth-child(2) { order: 3; }
-.navigation :nth-child(3) { order: 4; }
-.navigation :nth-child(4) { order: 2; }
+.navigation :nth-child(1) { 
+  order: 1; 
+}
+.navigation :nth-child(2) { 
+  order: 3; 
+  border-bottom: 3px solid #0065FC;
+  /*align-items: center; */
+  width:100%;
+
+}
+.navigation :nth-child(3) { 
+  order: 4; 
+  border-bottom: 3px solid #F2F2F2;
+}
+.navigation :nth-child(4) { 
+  order: 2; 
+}
     
 
 .navigationLogo {
-text-align: left;
+  margin-left: 5%;
+  margin-right: auto;
 }
 
 .navigationLienH{
-border-bottom: 3px solid #0065FC;
 border-top: 3px transparent solid;
-width: 100%;
+margin-left: auto;
+margin-right: auto;
 }
 
 .navigationLienA {
-border-bottom: 3px solid #F2F2F2;
-border-top: 3px transparent solid;
-width: 100%;
+margin-left: auto;
+margin-right: auto;
 }
 
 .navigationLienS{
-border-top: 3px transparent solid;
-border-bottom: 3px transparent solid;
+  margin-left: auto;
+  margin-right: 15%;
+  font-weight: bold;
 }
 
 
@@ -697,23 +736,6 @@ border-bottom: 3px transparent solid;
   .vignettePopulaires{
     width: 100%;
   }
-
-  .vignettePopulaire {
-    flex-direction: column;
-    max-height: 230px;
-  }
-
-  .vignettePopulaire img{
-    width: 100%;
-  }
-
-  .vignettePopulaireContent {
-  display: flex;
-  flex: 1;
-  width :100%;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 /* Hebergement */
   .flex-hebergement{ 
@@ -774,7 +796,7 @@ border-bottom: 3px transparent solid;
   }
 }
 /* Pour les ecrans type tablette */
-@media (min-width: 769px) and (max-device-width:991px) {
+@media (min-width: 769px) and (max-width:991px) {
   .flex-navigation {
     flex-direction: row;
     padding:0;
@@ -815,30 +837,16 @@ border-bottom: 3px transparent solid;
 
   .vignettePopulaires{
     width: 90%;
-    grid-template-columns:  45% 45%;
+    grid-template-columns:  1fr 1fr;
     grid-template-rows: 1fr 1fr; 
-
-    /*grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 200px [col-start]);*/
-    /*grid-template-rows:auto;*/
   }
 
-  .vignettePopulaire {
-    flex-direction: column;
-    max-height: 290px;
+  .imagePopulaire {
+    width: 60%;
+    border-radius: 5px 0 0 5px;
+    object-fit: cover;
   }
 
-  .vignettePopulaire img{
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-  }
-
-  .vignettePopulaireContent {
-  display: flex;
-  width :100%;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 /* Hebergement */
   .flex-hebergement{ 
